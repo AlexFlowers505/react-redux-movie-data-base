@@ -1,0 +1,9 @@
+.footer {
+  background-color: rgb(26, 36, 47);
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(255, 255, 255);
+}/*# sourceMappingURL=Footer.css.map */

@@ -1,0 +1,11 @@
+@import '../../../styles/toolKit/vars/vars.scss';
+
+.footer {
+    background-color: $clr-secondary;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: $clr-whitish;
+}

@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+.header {
+  background-color: rgb(26, 36, 47);
+  height: 72px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.user-image {
+  width: 38px;
+  height: 38px;
+}
+.user-image svg {
+  width: 100%;
+  height: 100%;
+  stroke: rgb(255, 255, 255);
+}/*# sourceMappingURL=Header.css.map */

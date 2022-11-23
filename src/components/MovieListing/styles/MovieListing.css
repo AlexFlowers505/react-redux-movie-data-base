@@ -1,0 +1,10 @@
+.movie-list,
+.show-list {
+  margin: 20px 0;
+}
+.movie-list h2,
+.show-list h2 {
+  color: rgb(121, 184, 243);
+  margin-bottom: 10px;
+  font-weight: 400;
+}/*# sourceMappingURL=MovieListing.css.map */
