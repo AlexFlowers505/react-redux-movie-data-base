@@ -1,6 +1,11 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import {
+    createSlice,
+    createAsyncThunk
+} from '@reduxjs/toolkit'
 import movieApi from '../../stateManagement/apis/omdbApi/apiUrl'
-import { apiKey } from '../../stateManagement/apis/omdbApi/apiKey'
+import {
+    apiKey
+} from '../../stateManagement/apis/omdbApi/apiKey'
 
 
 export const fetchAsyncMovies = createAsyncThunk('movies/fetchAsyncMovies', async term => {
@@ -23,31 +28,43 @@ const movieSlice = createSlice({
         selectedMovieOrShow: {},
     },
     reducers: {
-        removeSelectedMovieOrShow: state => { state.selectedMovieOrShow = {} },
+        removeSelectedMovieOrShow: state => {
+            state.selectedMovieOrShow = {}
+        },
     },
     extraReducers: {
-        [fetchAsyncMovies.pending]: () => {
-            console.log('Pending')
+        [fetchAsyncMovies.pending]: () => {},
+        [fetchAsyncMovies.fulfilled]: (state, {
+            payload
+        }) => {
+            return {
+                ...state,
+                movies: payload
+            }
         },
-        [fetchAsyncMovies.fulfilled]: (state, {payload}) => {
-            console.log('Fetched successfully')
-            return {...state, movies: payload}
+        [fetchAsyncMovies.rejected]: () => {},
+        [fetchAsyncShows.fulfilled]: (state, {
+            payload
+        }) => {
+            return {
+                ...state,
+                shows: payload
+            }
         },
-        [fetchAsyncMovies.rejected]: () => {
-            console.log('rejected')
-        },
-        [fetchAsyncShows.fulfilled]: (state, {payload}) => {
-            console.log('Fetched successfully')
-            return {...state, shows: payload}
-        },
-        [fetchAsyncMovieOrShowDetails.fulfilled]: (state, {payload}) => {
-            console.log('Fetched successfully')
-            return {...state, selectedMovieOrShow: payload}
+        [fetchAsyncMovieOrShowDetails.fulfilled]: (state, {
+            payload
+        }) => {
+            return {
+                ...state,
+                selectedMovieOrShow: payload
+            }
         },
     }
 })
 
-export const { removeSelectedMovieOrShow } = movieSlice.actions
+export const {
+    removeSelectedMovieOrShow
+} = movieSlice.actions
 export const getAllMovies = state => state.movies.movies
 export const getAllShows = state => state.movies.shows
 export const getSelectedMovieOrShow = state => state.movies.selectedMovieOrShow

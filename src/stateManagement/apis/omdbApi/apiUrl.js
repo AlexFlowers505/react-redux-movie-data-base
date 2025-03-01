@@ -2,7 +2,7 @@ import axios from "axios"
 
 
 export default axios.create({
-    baseURL: 'http://www.omdbapi.com/',
+    baseURL: 'https://www.omdbapi.com/',
 })
 
 // send data requests via 'http://www.omdbapi.com/?apikey=[yourkey]&'
